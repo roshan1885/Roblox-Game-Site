@@ -1,0 +1,3 @@
+change the team section on the about page. it should display the owner name on the first heading and the position (owner) on the subheading. same goes with coowner 1&2
+if there's no owner/co-owner, do not display
+same goes with admin and all the other roles

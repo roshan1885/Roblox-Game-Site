@@ -1,0 +1,308 @@
+/*
+ * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
+ * Keep every @import in this top block. Web fonts load via <link> in src/routes/__root.tsx.
+ */
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Game community design system — playful, colorful, and adaptable.
+ * Bright Pet-Sim style game UI: sunny sky surfaces, white panels with chunky ink outlines
+ * and pressable 3D buttons, with a bright, game-inspired palette.
+ * Display font: Lilita One. Body: Fredoka (rounded).
+ */
+@theme inline {
+  --font-display: "Lilita One", "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-lantern: var(--lantern);
+  --color-lantern-foreground: var(--lantern-foreground);
+  --color-sky: var(--sky);
+  --color-sky-foreground: var(--sky-foreground);
+  --color-bubble: var(--bubble);
+  --color-bubble-foreground: var(--bubble-foreground);
+  --color-ocean: var(--ocean);
+  --color-ocean-foreground: var(--ocean-foreground);
+  --color-ocean-muted: var(--ocean-muted);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-rarity-common: var(--rarity-common);
+  --color-rarity-rare: var(--rarity-rare);
+  --color-rarity-epic: var(--rarity-epic);
+  --color-rarity-legendary: var(--rarity-legendary);
+  --color-rarity-mythical: var(--rarity-mythical);
+  --color-brand-roblox: var(--brand-roblox);
+  --color-brand-discord: var(--brand-discord);
+  --color-brand-x: var(--brand-x);
+  --color-brand-youtube: var(--brand-youtube);
+  --color-brand-tiktok: var(--brand-tiktok);
+  --color-brand-instagram: var(--brand-instagram);
+  --color-brand-twitch: var(--brand-twitch);
+  --color-brand-reddit: var(--brand-reddit);
+  --color-brand-facebook: var(--brand-facebook);
+  --color-brand-github: var(--brand-github);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-press: var(--press);
+  --shadow-press-lg: var(--press-lg);
+  --shadow-glow: var(--press);
+  --shadow-crate: var(--press);
+}
+
+:root {
+  --radius: 0.9rem;
+  --ink: oklch(0.26 0.075 262);
+  --ink-foreground: oklch(0.99 0.005 240);
+  --background: oklch(0.955 0.03 225);
+  --foreground: oklch(0.26 0.075 262);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.075 262);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.075 262);
+  --primary: oklch(0.6 0.18 145);
+  --primary-foreground: oklch(0.99 0.01 145);
+  --secondary: oklch(0.92 0.045 228);
+  --secondary-foreground: oklch(0.26 0.075 262);
+  --muted: oklch(0.94 0.025 228);
+  --muted-foreground: oklch(0.47 0.05 258);
+  --accent: oklch(0.93 0.05 215);
+  --accent-foreground: oklch(0.26 0.075 262);
+  --lantern: oklch(0.86 0.165 88);
+  --lantern-foreground: oklch(0.32 0.08 60);
+  --sky: oklch(0.6 0.16 240);
+  --sky-foreground: oklch(0.99 0.005 240);
+  --bubble: oklch(0.7 0.19 355);
+  --bubble-foreground: oklch(0.99 0.01 355);
+  --ocean: oklch(0.32 0.09 252);
+  --ocean-foreground: oklch(0.97 0.015 230);
+  --ocean-muted: oklch(0.8 0.04 240);
+  --success: oklch(0.56 0.16 150);
+  --success-foreground: oklch(0.99 0.01 150);
+  --warning: oklch(0.8 0.16 75);
+  --warning-foreground: oklch(0.3 0.08 55);
+  --destructive: oklch(0.58 0.22 25);
+  --destructive-foreground: oklch(0.99 0.01 25);
+  --rarity-common: oklch(0.68 0.03 250);
+  --rarity-rare: oklch(0.62 0.17 240);
+  --rarity-epic: oklch(0.58 0.21 305);
+  --rarity-legendary: oklch(0.8 0.17 75);
+  --rarity-mythical: oklch(0.63 0.24 15);
+  --brand-roblox: oklch(0.22 0.01 260);
+  --brand-discord: oklch(0.58 0.2 277);
+  --brand-x: oklch(0.18 0 0);
+  --brand-youtube: oklch(0.6 0.24 28);
+  --brand-tiktok: oklch(0.2 0.01 300);
+  --brand-instagram: oklch(0.62 0.23 0);
+  --brand-twitch: oklch(0.55 0.22 295);
+  --brand-reddit: oklch(0.65 0.22 40);
+  --brand-facebook: oklch(0.55 0.19 260);
+  --brand-github: oklch(0.25 0.01 260);
+  --brand-foreground: oklch(1 0 0);
+  --border: oklch(0.86 0.035 240);
+  --input: oklch(0.8 0.045 240);
+  --ring: oklch(0.6 0.16 240);
+  --chart-1: oklch(0.6 0.18 145);
+  --chart-2: oklch(0.86 0.165 88);
+  --chart-3: oklch(0.6 0.16 240);
+  --chart-4: oklch(0.7 0.19 355);
+  --chart-5: oklch(0.58 0.21 305);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.26 0.075 262);
+  --sidebar-primary: oklch(0.6 0.18 145);
+  --sidebar-primary-foreground: oklch(0.99 0.01 145);
+  --sidebar-accent: oklch(0.93 0.05 215);
+  --sidebar-accent-foreground: oklch(0.26 0.075 262);
+  --sidebar-border: oklch(0.86 0.035 240);
+  --sidebar-ring: oklch(0.6 0.16 240);
+
+  --gradient-primary: linear-gradient(180deg, oklch(0.72 0.19 140), oklch(0.58 0.18 147));
+  --gradient-lantern: linear-gradient(180deg, oklch(0.92 0.16 95), oklch(0.8 0.17 75));
+  --gradient-sky: linear-gradient(180deg, oklch(0.72 0.14 230), oklch(0.58 0.16 245));
+  --gradient-bubble: linear-gradient(180deg, oklch(0.8 0.15 355), oklch(0.66 0.2 0));
+  --gradient-hero-fade: linear-gradient(180deg, oklch(0.955 0.03 225 / 0) 60%, oklch(0.955 0.03 225) 100%);
+  --gradient-hero-top: radial-gradient(ellipse 60% 55% at 50% 30%, oklch(0.26 0.075 262 / 0.35), transparent 70%);
+  --press: 0 5px 0 0 var(--ink);
+  --press-lg: 0 7px 0 0 var(--ink);
+  }
+
+  .dark {
+    --background: oklch(0.12 0.02 225);
+    --foreground: oklch(0.98 0.005 240);
+    --card: oklch(0.14 0.02 225);
+    --card-foreground: oklch(0.98 0.005 240);
+    --popover: oklch(0.14 0.02 225);
+    --popover-foreground: oklch(0.98 0.005 240);
+    --primary: oklch(0.55 0.18 145);
+    --primary-foreground: oklch(0.99 0.01 145);
+    --secondary: oklch(0.2 0.04 228);
+    --secondary-foreground: oklch(0.98 0.005 240);
+    --muted: oklch(0.16 0.02 228);
+    --muted-foreground: oklch(0.6 0.03 258);
+    --accent: oklch(0.2 0.03 215);
+    --accent-foreground: oklch(0.98 0.005 240);
+    --ink: oklch(0.9 0.01 240);
+    --ink-foreground: oklch(0.2 0.01 240);
+    --border: oklch(0.25 0.02 240);
+    --input: oklch(0.2 0.02 240);
+    --ring: oklch(0.55 0.18 145);
+    --muted-foreground: oklch(0.6 0.03 258);
+
+    --gradient-hero-fade: linear-gradient(180deg, oklch(0.12 0.02 225 / 0) 60%, oklch(0.12 0.02 225) 100%);
+    --press: 0 5px 0 0 var(--ink);
+    --press-lg: 0 7px 0 0 var(--ink);
+  }
+
+  @layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    background-image:
+      radial-gradient(circle at 1px 1px, oklch(0.6 0.16 240 / 0.12) 1.5px, transparent 0),
+      linear-gradient(180deg, color-mix(in oklch, var(--color-background), var(--color-sky) 15%), var(--color-background) 40rem);
+    background-size: 26px 26px, 100% 100%;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+}
+
+@utility bg-hero-fade {
+  background-image: var(--gradient-hero-fade);
+}
+@utility bg-hero-top {
+  background-image: var(--gradient-hero-top);
+}
+@utility bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+@utility bg-gradient-lantern {
+  background-image: var(--gradient-lantern);
+}
+@utility bg-gradient-sky {
+  background-image: var(--gradient-sky);
+}
+@utility bg-gradient-bubble {
+  background-image: var(--gradient-bubble);
+}
+/* Chunky game panel: white card, thick ink outline, pressed-down shadow. */
+@utility surface-crate {
+  background-color: var(--color-card);
+  border: 3px solid var(--color-ink);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--press);
+}
+/* Big white title with ink outline, like in-game text. */
+@utility text-outline {
+  color: var(--color-ink-foreground);
+  -webkit-text-stroke: 0.14em var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow: 0 0.09em 0 var(--color-ink);
+}
+@utility text-outline-sm {
+  color: var(--color-ink-foreground);
+  -webkit-text-stroke: 0.1em var(--color-ink);
+  paint-order: stroke fill;
+  text-shadow: 0 0.06em 0 var(--color-ink);
+}
+@utility press {
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+  &:hover {
+    filter: brightness(1.07);
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(4px);
+    box-shadow: none;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+@keyframes shine {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  60%, 100% { transform: translateX(220%) skewX(-20deg); }
+}
+@utility animate-float {
+  animation: float-slow 4s ease-in-out infinite;
+}
+@utility animate-bob {
+  animation: bob 3.2s ease-in-out infinite;
+}
+@utility shine {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, oklch(1 0 0 / 0.45), transparent);
+    animation: shine 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-bob, .animate-float, .shine::after { animation: none; }
+}
