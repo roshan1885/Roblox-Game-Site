@@ -243,11 +243,18 @@ Test files live alongside source (e.g., `src/lib/access.test.ts`, `src/component
 
 ## 📦 Deployment
 
-This project is designed to deploy on platforms supporting TanStack Start (Node/Edge runtime), such as:
+### Deploy to Vercel
 
-- [Vercel](https://vercel.com)
-- [Netlify](https://netlify.com)
-- [Cloudflare Pages](https://pages.cloudflare.com)
+Import the repository into [Vercel](https://vercel.com), use `npm ci` to install dependencies and `npm run build` as the build command. Nitro's Vercel preset generates Vercel's Build Output API output automatically.
+
+Add these environment variables in the Vercel project settings for each environment:
+
+- `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` are required at build time; they are embedded into the browser bundle.
+- `SUPABASE_SECRET_KEY` is required at runtime for server-side admin operations. Never expose it to the browser.
+- `DATABASE_URL` is only needed when running Drizzle migrations.
+- `CRON_SECRET` is needed only if scheduled tasks are enabled; `CRON_SECRET_PREVIOUS` is optional during secret rotation.
+
+Redeploy after changing environment variables. `npm run build` can also be run locally to verify the deployment build.
 
 
 ---

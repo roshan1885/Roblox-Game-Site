@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
       ...tanstackStart(),
       viteReact(),
       tailwindcss(),
-      nitro({ preset: "cloudflare-module" }),
+      nitro({ preset: "vercel" }),
     ],
     environments: {
       ssr: { build: { rollupOptions: { input: "./src/server.ts" } } },
