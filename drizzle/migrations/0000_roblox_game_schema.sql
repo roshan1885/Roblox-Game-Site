@@ -317,7 +317,7 @@ CREATE TABLE public.notices (
   title text NOT NULL,
   content text NOT NULL,
   is_active boolean NOT NULL DEFAULT true,
-  created_by uuid,
+  author_id uuid,
   created_at timestamptz NOT NULL DEFAULT now(),
   updated_at timestamptz NOT NULL DEFAULT now()
 );
